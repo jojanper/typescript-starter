@@ -1,0 +1,39 @@
+{
+  "name": "tscoverage",
+  "version": "2.1.0",
+  "description": "Testing Karma+Typescript with full coverage",
+  "main": "index.js",
+  "scripts": {
+    "build-dev": "npm run webpack -- --folder=dist",
+    "build-prod": "npm run webpack -- --env=production --folder=dist",
+    "http-server": "http-server",
+    "lint": "eslint '.*.js' '*.js' 'test/index.ts' './src/**/*.ts'",
+    "serve-build": "npm run http-server -- . --p 4200",
+    "test": "NODE_ENV=test karma start karma.conf.js --single-run",
+    "webpack": "webpack --config webpack.config.js"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jasmine": "^3.5.0",
+    "@types/node": "^13.1.4",
+    "@typescript-eslint/eslint-plugin": "^2.15.0",
+    "@typescript-eslint/parser": "^2.15.0",
+    "eslint": "^6.8.0",
+    "http-server": "latest",
+    "istanbul-instrumenter-loader": "^3.0.1",
+    "karma": "^4.4.1",
+    "karma-chrome-launcher": "^3.1.0",
+    "karma-coverage": "^2.0.1",
+    "karma-coverage-istanbul-reporter": "^2.1.1",
+    "karma-jasmine": "^2.0.1",
+    "karma-mocha-reporter": "^2.2.5",
+    "karma-sourcemap-loader": "^0.3.7",
+    "karma-webpack": "^4.0.2",
+    "minimist": "^1.2.0",
+    "ts-loader": "^6.2.1",
+    "typescript": "^3.7.3",
+    "webpack": "^4.41.3",
+    "webpack-cli": "^3.3.10"
+  }
+}
