@@ -1,7 +1,14 @@
 {
-  "name": "tscoverage",
-  "version": "2.1.0",
-  "description": "Testing Karma+Typescript with full coverage",
+  "name": "typescript-starter",
+  "version": "0.0.1",
+  "description": "TypeScript + Webpack + Karma + Coverage + ESLint project template",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jojanper/typescript-starter.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jojanper/typescript-starter/issues"
+  },
   "main": "index.js",
   "scripts": {
     "build-dev": "npm run webpack -- --folder=dist",
@@ -12,8 +19,11 @@
     "test": "NODE_ENV=test karma start karma.conf.js --single-run",
     "webpack": "webpack --config webpack.config.js"
   },
-  "author": "",
+  "author": "Juha Ojanperä <juha.ojanpera@gmail.com>",
   "license": "MIT",
+  "dependencies": {
+    "rxjs": "^6.5.4"
+  },
   "devDependencies": {
     "@types/jasmine": "^3.5.0",
     "@types/node": "^13.1.4",

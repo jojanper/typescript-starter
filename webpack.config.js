@@ -10,7 +10,7 @@ const VERSION = JSON.stringify(packageJson.version).replace(/"/g, '');
 function config(env) {
     const folder = argv.folder || 'build';
     const ext = (env === 'production') ? '.min' : '';
-    const filename = `engine.${VERSION}${ext}.js`;
+    const filename = `engine.${VERSION}.[contentHash]${ext}.js`;
 
     const isTest = env === 'test';
     if (env === 'test') {
@@ -31,6 +31,17 @@ function config(env) {
         },
         resolve: {
             extensions: ['.js', '.ts', '.json']
+        },
+        optimization: {
+            splitChunks: {
+                cacheGroups: {
+                    commons: {
+                        test: /[\\/]node_modules[\\/]/,
+                        name: 'vendors',
+                        chunks: 'all'
+                    }
+                }
+            }
         },
         module: {
             rules: [
