@@ -27,6 +27,12 @@ npm run build-dev
 npm run build-prod
 ```
 
+### Serve dev or production bundle
+```
+npm run serve-build
+```
+Open http://localhost:4200 in your browser. You should see `HelloLib` if you apply `console.log(this);` in console dev tools of your browser.
+
 ## License
 
 [MIT](/LICENSE)

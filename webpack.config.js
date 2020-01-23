@@ -7,20 +7,23 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const packageJson = require('./package.json');
 
+const TEST = 'test';
+const DEV = 'development';
+const PROD = 'production';
 const VERSION = JSON.stringify(packageJson.version).replace(/"/g, '');
 
 function config(env) {
     const folder = argv.folder || 'build';
-    const ext = (env === 'production') ? '.min' : '';
+    const ext = (env === PROD) ? '.min' : '';
 
-    const isTest = env === 'test';
-    if (env === 'test') {
-        env = 'development';
+    const isTest = env === TEST;
+    if (isTest) {
+        env = DEV;
     }
 
-    const mode = env || 'development';
+    const mode = env || DEV;
 
-    const configuration = {
+    let configuration = {
         mode,
         entry: './src/bundle.ts',
         output: {
@@ -40,10 +43,18 @@ function config(env) {
                     use: 'ts-loader'
                 }
             ]
-        }
+        },
+        plugins: [
+            new CleanWebpackPlugin(),
+
+            // Create index.html automatically
+            new HtmlWebpackPlugin({
+                title: 'TypeScript starter',
+            })
+        ]
     };
 
-    if (mode === 'development') {
+    if (mode === DEV) {
         configuration.devtool = 'inline-source-map';
     }
 
@@ -62,17 +73,9 @@ function config(env) {
         );
     }
 
-    if (mode === 'production') {
+    if (mode === PROD) {
         configuration = {
             ...configuration,
-            plugins: [
-                new CleanWebpackPlugin(),
-
-                // Create index.html automatically
-                new HtmlWebpackPlugin({
-                    title: 'TypeScript starter',
-                }),
-            ],
             optimization: {
                 moduleIds: 'hashed',
                 runtimeChunk: 'single',
