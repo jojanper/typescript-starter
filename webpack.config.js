@@ -39,9 +39,20 @@ function config(env) {
         module: {
             rules: [
                 {
+                    test: /\.(js|ts)$/,
+                    exclude: [/node_modules/],
+                    use: {
+                        loader: 'babel-loader',
+                        options: {
+                            envName: isTest ? 'test' : 'legacy'
+                        }
+                    }
+                }/*,
+                {
                     test: /\.ts$/,
                     use: 'ts-loader'
                 }
+                */
             ]
         },
         plugins: [
@@ -60,6 +71,7 @@ function config(env) {
 
     if (isTest) {
         // Needed for code coverage
+        /*
         configuration.module.rules.push(
             {
                 test: /\.ts$/,
@@ -71,6 +83,7 @@ function config(env) {
                 }
             }
         );
+        */
     }
 
     if (mode === PROD) {
