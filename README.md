@@ -1,4 +1,5 @@
 #  Typescript + Karma + Webpack + Coverage + ESLint project boilerplate
+Simple TypeScript project setup.
 
 ## Quickstart
 

@@ -8,7 +8,7 @@ module.exports = {
             ],
             plugins: [
                 '@babel/proposal-class-properties',
-			    '@babel/proposal-object-rest-spread'
+                '@babel/proposal-object-rest-spread'
             ]
         },
 
@@ -16,7 +16,6 @@ module.exports = {
         modern: {
             presets: [
                 [
-                    //'@babel/preset-typescript',
                     '@babel/preset-env', {
                         modules: false,
                         targets: {
@@ -24,20 +23,22 @@ module.exports = {
                             esmodules: true
                         }
                     }
-                ]
+                ],
+                ['@babel/preset-typescript']
             ],
             plugins: [
                 '@babel/plugin-transform-runtime',
                 '@babel/plugin-syntax-dynamic-import',
                 '@babel/proposal-class-properties',
-			    '@babel/proposal-object-rest-spread'
+                '@babel/proposal-object-rest-spread'
             ]
         },
 
+        // Test settings
         test: {
             presets: [
                 '@babel/preset-env',
-                "@babel/preset-typescript"
+                '@babel/preset-typescript'
             ],
             plugins: [
                 'istanbul'

@@ -47,12 +47,7 @@ function config(env) {
                             envName: isTest ? 'test' : 'legacy'
                         }
                     }
-                }/*,
-                {
-                    test: /\.ts$/,
-                    use: 'ts-loader'
                 }
-                */
             ]
         },
         plugins: [
@@ -67,23 +62,6 @@ function config(env) {
 
     if (mode === DEV) {
         configuration.devtool = 'inline-source-map';
-    }
-
-    if (isTest) {
-        // Needed for code coverage
-        /*
-        configuration.module.rules.push(
-            {
-                test: /\.ts$/,
-                exclude: [path.resolve(__dirname, 'test')],
-                enforce: 'post',
-                use: {
-                    loader: 'istanbul-instrumenter-loader',
-                    options: { esModules: true }
-                }
-            }
-        );
-        */
     }
 
     if (mode === PROD) {
