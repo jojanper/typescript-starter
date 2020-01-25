@@ -21,5 +21,12 @@ module.exports = {
                 'SwitchCase': 1
             }
         ],
+
+        'max-len': [
+            'error',
+            {
+                'code': 135
+            }
+        ],
     },
 };
