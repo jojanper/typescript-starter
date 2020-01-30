@@ -12,6 +12,7 @@
   "main": "index.js",
   "scripts": {
     "build-dev": "npm run webpack -- --folder=dist",
+    "build-index": "node ./build_html.js ./dist ./dist/index.html ./index-template.html",
     "build-prod": "npm run webpack -- --env=production --folder=dist",
     "http-server": "http-server",
     "lint": "eslint '.*.js' '*.js' 'test/index.ts' './src/**/*.ts'",
