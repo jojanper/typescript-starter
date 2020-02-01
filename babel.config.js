@@ -3,8 +3,15 @@ module.exports = {
         // This is the config we'll use to generate bundles for legacy browsers.
         legacy: {
             presets: [
-                '@babel/preset-env',
-                '@babel/preset-typescript'
+                [
+                    '@babel/preset-env', {
+                        modules: false,
+                        corejs: 3,
+                        useBuiltIns: 'usage',
+                        targets: '> 0.25%, last 2 versions, Firefox ESR'
+                    }
+                ],
+                ['@babel/preset-typescript']
             ],
             plugins: [
                 '@babel/proposal-class-properties',

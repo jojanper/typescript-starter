@@ -11,9 +11,11 @@
   },
   "main": "index.js",
   "scripts": {
-    "build-dev": "npm run webpack -- --folder=dist",
+    "build-dev-webpack": "npm run webpack -- --folder=dist",
+    "build-dev": "npm run build-dev-webpack && npm run build-index",
     "build-index": "node ./build_html.js ./dist ./dist/index.html ./index-template.html",
-    "build-prod": "npm run webpack -- --env=production --folder=dist",
+    "build-prod-webpack": "npm run webpack -- --env=production --folder=dist",
+    "build-prod": "npm run build-prod-webpack && npm run build-index",
     "http-server": "http-server",
     "lint": "eslint '.*.js' '*.js' 'test/index.ts' './src/**/*.ts'",
     "serve-build": "npm run http-server -- dist --p 4200",
