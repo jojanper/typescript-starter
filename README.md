@@ -32,7 +32,7 @@ npm run build-prod
 ```
 npm run serve-build
 ```
-Open http://localhost:4200 in your browser. You should see `HelloLib` if you apply `console.log(this);` in console dev tools of your browser.
+Open http://localhost:4200 in your browser. You should see `HelloLib` if you call `console.log(this)` in the console dev tools of your browser.
 
 ## License
 
