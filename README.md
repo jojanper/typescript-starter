@@ -4,7 +4,7 @@
 [![devDependency Status][david-dev-image]][david-dev-url]
 
 [actions-image]: https://github.com/jojanper/typescript-starter/workflows/TypeScript%20Starter%20CI/badge.svg
-[actions-url]: https://travis-ci.org/jojanper/typescript-starter.svg?branch=master
+[actions-url]: https://github.com/jojanper/typescript-starter/actions
 [travis-image]: https://travis-ci.org/jojanper/typescript-starter.svg?branch=master
 [travis-url]: https://travis-ci.org/jojanper/typescript-starter
 [david-image]: https://david-dm.org/jojanper/typescript-starter.svg
